@@ -10,16 +10,41 @@ public class DollarTest {
 
     @Test
     public void times_fiveDollarsMutiplyTwo_tenDollars() {
-        Dollar fiveDollar = new Dollar(5);
-        fiveDollar.times(2);
-        Assert.assertEquals(10,fiveDollar.amount);
+        Money fiveDollar = Money.dollar(5);
+
+        Assert.assertEquals(Money.dollar(10), fiveDollar.times(2));
     }
 
     @Test
-    public void times_sixDollarsMutiplyFive_thirtyDollars() {
-        Dollar sixDollar = new Dollar(6);
+    public void times_timesDollarsTwice_notChangeOriginDollar() {
+        Money sixDollar = Money.dollar(6);
+
         sixDollar.times(5);
-        Assert.assertEquals(30,sixDollar.amount);
+        sixDollar.times(2);
+
+        Assert.assertEquals(Money.dollar(6),sixDollar);
+    }
+
+    @Test
+    public void equals_sameDollar_true() {
+        Money fiveDollar = Money.dollar(5);
+        Money fiveDollar2 = Money.dollar(5);
+
+        Assert.assertEquals(fiveDollar, fiveDollar2);
+    }
+
+    @Test
+    public void equals_differentDollar_false() {
+        Money fiveDollar = Money.dollar(5);
+        Money tenDollar = Money.dollar(10);
+
+        Assert.assertNotEquals(fiveDollar, tenDollar);
+    }
+
+    @Test
+    public void currency_fiveDollar_returnUSD() {
+        Money fiveDollar = Money.dollar(5);
+        Assert.assertEquals("USD", fiveDollar.currency());
     }
 
 }

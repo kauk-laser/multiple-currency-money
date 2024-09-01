@@ -3,13 +3,9 @@ package org.example.practice;
 /**
  * @author shijian
  */
-public class Dollar extends Money{
+public class France extends Money{
 
-
-
-    public Dollar(int amount,String currency) {
+    public France(int amount,String currency) {
         super(amount,currency);
     }
-
-
 }
