@@ -3,7 +3,7 @@ package org.example.practice;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class FranceTest {
+public class MoneyFranceTest {
     @Test
     public void times_fiveFrancesMutiplyTwo_tenFrances() {
         Money fiveFrance = Money.france(5);

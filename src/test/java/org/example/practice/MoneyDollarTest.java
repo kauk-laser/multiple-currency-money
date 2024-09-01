@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class DollarTest {
+public class MoneyDollarTest {
 
     @Test
     public void times_fiveDollarsMutiplyTwo_tenDollars() {
